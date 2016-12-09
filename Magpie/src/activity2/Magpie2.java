@@ -13,7 +13,7 @@ package activity2;
  * 		    Handles responding to simple words and phrases 
  * </li></ul>
  * This version uses a nested if to handle default responses.
- * @author Mr. T
+ * @author Carter Langbert for APCSA
  * @version December 2016
  */
 public class Magpie2
@@ -24,7 +24,7 @@ public class Magpie2
 	 */
 	public String getGreeting()
 	{
-		return "Hello, let's talk.";
+		return "Hello! Let's talk.";
 	}
 	
 	/**
@@ -48,6 +48,18 @@ public class Magpie2
 		{
 			response = "Tell me more about your family.";
 		}
+                else if(statement.indexOf("Hello.") >= 0 || statement.indexOf("Hi.") >= 0 || statement.indexOf("Hey.") >= 0 || statement.indexOf("Hey") >= 0 || statement.indexOf("hey.") >= 0 || statement.indexOf("hey") >= 0 || statement.indexOf("Hello") >= 0 || statement.indexOf("hello") >= 0 || statement.indexOf("hello.") >= 0)
+                {
+                    response = "What's up?";
+                }
+                else if(statement.indexOf("dog") >= 0 || statement.indexOf("cat") >= 0 || statement.indexOf("hamster") >= 0)
+                {
+                    response = "You have a pet? Awesome!";
+                }
+                else if(statement.indexOf("Nothing much") >= 0 || statement.indexOf("nothing much") >= 0 || statement.indexOf("Nothing much.") >= 0)
+                {
+                    response = "That's too bad. There has to be something you can tell me!";
+                }
 		else
 		{
 			response = getRandomResponse();
@@ -61,7 +73,7 @@ public class Magpie2
 	 */
 	private String getRandomResponse()
 	{
-		final int NUMBER_OF_RESPONSES = 4;
+		final int NUMBER_OF_RESPONSES = 1;
 		double r = Math.random();
 		int whichResponse = (int)(r * NUMBER_OF_RESPONSES);
 		String response = "";
@@ -72,15 +84,15 @@ public class Magpie2
 		}
 		else if (whichResponse == 1)
 		{
-			response = "Hmmm.";
+			response = "That's nice.";
 		}
 		else if (whichResponse == 2)
 		{
-			response = "Do you really think so?";
+			response = "Cool!";
 		}
 		else if (whichResponse == 3)
 		{
-			response = "You don't say.";
+			response = "Awesome!";
 		}
 
 		return response;
